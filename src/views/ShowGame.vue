@@ -1,10 +1,18 @@
 <template>
   <div class="container">
     <div class="card">
-      <div class="card-header">Edit Boardgame</div>
+      <div class="card-header"></div>
       <div class="card-body">
-        <h1>{{ boardgame.name }}</h1>
-        <h5>Publisher: {{ boardgame.publisher }}</h5>
+        <div class="row">
+          <div class="col-sm-8">
+            <h1>{{ boardgame.name }}</h1>
+            <h5>Publisher: {{ boardgame.publisher }}</h5>
+          </div>
+          <div class="col-sm-4 text-end">
+            <img class="mx-3" src="../assets/heart.png" v-if="boardgame.is_favorite" alt="">
+            <img class="mx-3" src="../assets/heart-blank.png" v-if="!boardgame.is_favorite" alt="">
+          </div>
+        </div>
         <p>Year {{ boardgame.year }}</p>
         <p>Category: {{ boardgame._category ? boardgame._category.name : '' }}</p>
         <hr>
@@ -28,7 +36,6 @@ export default {
   },
   mounted() {
     this.getBoardgame(this.$route.params.id)
-    console.log(this.boardgame)
   }
 }
 </script>

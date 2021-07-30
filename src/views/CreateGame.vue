@@ -101,7 +101,6 @@ export default {
       this.boardgame.year.value = value
     },
     updateCategory: function (event) {
-      console.log(event)
       this.boardgame.category.value = event.target.value
     },
     save: function () {

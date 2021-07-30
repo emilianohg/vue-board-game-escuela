@@ -34,7 +34,6 @@ export default {
   methods: {
     ...mapActions(['getBoardgames', 'getBoardgame']),
     toggleFavorite: function () {
-      console.log(this.is_favorite)
       if(this.is_favorite) {
         FavoritesService.delete(this.id).then(() => {
           this.getBoardgames()
