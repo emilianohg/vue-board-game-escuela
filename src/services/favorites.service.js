@@ -41,4 +41,22 @@ export default class FavoritesService {
 
         return boardgames
     }
+
+    static async delete(id) {
+        try {
+            await axios.delete(`http://localhost:3000/favorites/${id}`)
+            return true;
+        } catch (_) {
+            return false
+        }
+    }
+
+    static async create(id) {
+        try {
+            await axios.post(`http://localhost:3000/favorites`, {id})
+            return true;
+        } catch (_) {
+            return false
+        }
+    }
 }

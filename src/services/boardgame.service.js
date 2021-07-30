@@ -1,4 +1,5 @@
 import axios from 'axios';
+import categories from "../store/categories";
 
 export default class BoardgameService {
 
@@ -35,6 +36,22 @@ export default class BoardgameService {
             return null
         }
 
+        if (boardgame.data != null) {
+            const category = categories.find(category => category.id === +boardgame.data.category)
+            if (category !== undefined) {
+                boardgame.data._category = category;
+            }
+        }
+
         return boardgame
+    }
+
+    static async delete(id) {
+        try {
+            await axios.delete(`http://localhost:3000/boardgame/${id}`)
+            return true;
+        } catch (_) {
+            return false
+        }
     }
 }

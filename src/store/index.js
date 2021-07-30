@@ -60,6 +60,8 @@ export default new Vuex.Store({
       const resp = await BoardgameService.find(id)
       const boardgame = resp.data
 
+      console.log(boardgame)
+
       commit('SET_LOADING', false)
 
       if (boardgame == null) return;
