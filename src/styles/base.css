@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
+:root {
+    --green : #1B5E20;
+    --red : #F57F17;
+    --gray : #b3b3b3;
+    --soft-gray: #ddd;
+    --white : #fff;
+}
+
+.container {
+    display: block;
+    max-width: 1050px;
+    width: auto;
+    margin: 0 auto;
+    padding: 20px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
+}
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
