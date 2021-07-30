@@ -1,9 +1,16 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link>
-      <router-link to="/games">Games</router-link>
-    </nav>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <router-link class="nav-link" to="/">Favorites</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link class="nav-link" to="/games">Games</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link class="nav-link" to="/create">Create</router-link>
+      </li>
+    </ul>
     <router-view/>
   </div>
 </template>

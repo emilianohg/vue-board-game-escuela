@@ -1,16 +1,23 @@
 <template>
   <div class="home">
     <div class="container">
-      <div class="control-container">
-        <select @change="changeCategory">
-          <option value="null">All categories</option>
-          <option v-for="category in categories" :value="category.id" :key="category.id">
-            {{ category.name }}
-          </option>
-        </select>
-      </div>
-      <div class="table-container">
-        <TableBoardGame :boardgames="favorites" class="table-favorites"></TableBoardGame>
+      <div class="card">
+        <div class="card-header">Favorites</div>
+        <div class="card-body">
+          <div class="row">
+              <div class="col-sm-6 offset-3">
+                <select @change="changeCategory" class="form-control">
+                  <option value="null">All categories</option>
+                  <option v-for="category in categories" :value="category.id" :key="category.id">
+                    {{ category.name }}
+                  </option>
+                </select>
+              </div>
+          </div>
+          <div class="table-container mt-3">
+            <TableBoardGame :boardgames="favorites" class="table-favorites"></TableBoardGame>
+          </div>
+        </div>
       </div>
     </div>
   </div>

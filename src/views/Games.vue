@@ -1,14 +1,19 @@
 <template>
   <div class="container games">
-    <div class="list-games">
-      <CardBoardGame v-for="boardgame in boardgames"
-                     :key="boardgame.id"
-                     :id="boardgame.id"
-                     :name="boardgame.name"
-                     :publisher="boardgame.publisher"
-                     :year="boardgame.year"
-                     :is_favorite="boardgame.is_favorite"
-      ></CardBoardGame>
+    <div class="card">
+      <div class="card-header">All games</div>
+      <div class="card-body">
+        <div class="list-games">
+          <CardBoardGame v-for="boardgame in boardgames"
+                         :key="boardgame.id"
+                         :id="boardgame.id"
+                         :name="boardgame.name"
+                         :publisher="boardgame.publisher"
+                         :year="boardgame.year"
+                         :is_favorite="boardgame.is_favorite"
+          ></CardBoardGame>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -35,5 +40,9 @@ export default {
 </script>
 
 <style scoped>
-
+  .list-games {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 19rem);
+    gap: 10px;
+  }
 </style>

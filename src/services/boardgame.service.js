@@ -54,4 +54,22 @@ export default class BoardgameService {
             return false
         }
     }
+
+    static async create(boardgame) {
+        try {
+            const response = await axios.post(`http://localhost:3000/boardgame`, boardgame)
+            return await response.data
+        } catch (_) {
+            return false
+        }
+    }
+
+    static async update(id, boardgame) {
+        try {
+            const response = await axios.put(`http://localhost:3000/boardgame/${id}`, boardgame)
+            return await response.data
+        } catch (_) {
+            return false
+        }
+    }
 }
